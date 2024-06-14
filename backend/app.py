@@ -11,9 +11,7 @@ usernames = ["fabimontans", "DiegoPlusUltra", "Saborcito"]
 models = {}
 
 for username in usernames:
-    model_path = os.path.join(
-        base_path, "..", f"best_joined_today_predictor_{username}.pkl"
-    )
+    model_path = os.path.join(base_path, f"best_joined_today_predictor_{username}.pkl")
     models[username] = joblib.load(model_path)
 
 
@@ -44,4 +42,4 @@ def predict(username):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
